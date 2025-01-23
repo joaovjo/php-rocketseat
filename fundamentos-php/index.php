@@ -44,6 +44,7 @@
             "finalizado" => false,
             "ano" => 2025,
             "descricao" => "Novo projeto em andamento",
+            "stack" => ["PHP", "HTML", "CSS", "JS"]
         ],
     ];
 
