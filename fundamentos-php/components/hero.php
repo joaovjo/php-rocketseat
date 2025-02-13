@@ -1,3 +1,11 @@
+<?php
+$itens = [
+    ['url' => '', 'src' => 'img/twitter.png', 'alt' => 'Twitter'],
+    ['url' => '', 'src' => 'img/facebook.png', 'alt' => 'Facebook'],
+    ['url' => '', 'src' => 'img/linkedin.png', 'alt' => 'LinkedIn'],
+    ['url' => '', 'src' => 'img/youtube.png', 'alt' => 'YouTube'],
+];
+?>
 <section class="flex gap-x-3">
     <div class="w-2/3">
         <h1 class="text-3xl font-bold">Oi, meu nome é João</h1>
@@ -10,26 +18,14 @@
         </p>
 
         <ul class="flex gap-x-3 mt-3">
-            <li>
-                <a href="">
-                    <img class="h-8 hover:animate-bounce" src="img/twitter.png" alt="x Logo" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img class="h-8 hover:animate-bounce" src="img/facebook.png" alt="Facebook logo" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img class="h-8 hover:animate-bounce" src="img/linkedin.png" alt="Linkedin Logo" />
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img class="h-8 hover:animate-bounce" src="img/youtube.png" alt="YouTube Logo" />
-                </a>
-            </li>
+
+            <?php foreach ($itens as $item): ?>
+                <li>
+                    <a href="<?= $item['url'] ?>" class="hover:underline">
+                        <img class="h-8 hover:animate-bounce" src="<?= $item['src'] ?>" alt="<?= $item['alt'] ?>" />
+                    </a>
+                </li>
+            <?php endforeach; ?>
         </ul>
     </div>
 
