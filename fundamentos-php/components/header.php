@@ -1,9 +1,9 @@
 <?php
     $itens = [
-        ['name' => 'Projetos', 'url' => ''],
-        ['name' => 'GitHub', 'url' => ''],
-        ['name' => 'LinkedIn', 'url' => ''],
-        ['name' => 'Twitter', 'url' => ''],
+        ['name' => 'Projetos', 'url' => '/'],
+        ['name' => 'GitHub', 'url' => 'https://github.com/joaovjo'],
+        ['name' => 'LinkedIn', 'url' => 'https://linkedin.com/in/joaovjo'],
+        ['name' => 'Twitter', 'url' => 'https://twitter.com/joaovjo'],
     ];
 ?>
 
@@ -13,10 +13,12 @@
 
     <div class="">
         <ul class="flex gap-x-3 font-medium">
-            <li><a href="" class="hover:underline">Projetos</a></li>
-            <li><a href="" class="hover:underline">GitHub</a></li>
-            <li><a href="" class="hover:underline">LinkedIn</a></li>
-            <li><a href="" class="hover:underline">Twitter</a></li>
+
+        <?php foreach ($itens as $item): ?>
+            <li><a href="<?=$item['url']?>" class="hover:underline">
+                <?=$item['name']?>
+            </a></li>
+        <?php endforeach; ?>
         </ul>
     </div>
 </header>
