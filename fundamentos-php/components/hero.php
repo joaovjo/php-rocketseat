@@ -29,7 +29,7 @@ $itens = [
         </ul>
     </div>
 
-    <div class="w-1/3 flex items-center justify-center">
+    <div class="w-1/3 flex items-center justify-end">
         <div>
             <img class="h-60 -mt-6 hover:animate-pulse" src="img/avatar.svg" alt="Foto Nome Sobrenome" />
         </div>

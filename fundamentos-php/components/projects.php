@@ -45,6 +45,8 @@ $projetos = [
                 <h3 class="text-xl font-semibold">
                     <?php if ($projeto['finalizado']): ?>
                         ✅
+                    <?php else: ?>
+                        🚧
                     <?php endif; ?>
                     <?= $projeto['titulo'] ?>
                     <span class="text-xs text-gray-400 opacity-50 italic">
