@@ -1,16 +1,14 @@
-<!doctype html>
-<html>
+<?php
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-</head>
+/**
+ * Página principal do Book Wise
+ * Importa os dados do catálogo de livros e exibe a lista completa
+ * com opção de pesquisa e navegação para detalhes
+ */
 
-<body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
-</body>
 
-</html>
+require_once 'dados.php';
+
+$view = "index";
+
+require_once 'views/template/app.php';
