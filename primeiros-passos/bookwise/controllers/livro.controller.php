@@ -5,6 +5,8 @@
  * Exibe informações detalhadas de um livro específico baseado no ID recebido via GET/POST
  */
 
+// Model
+
 require_once 'dados.php';
 
 // Obtém o ID do livro da requisição
@@ -15,6 +17,7 @@ $filtrado = array_filter($livros, fn($l) => $l['id'] == $id);
 
 // Obtém o livro encontrado do array filtrado
 $livro = array_pop($filtrado);
+
 
 
 $view = "livro";
