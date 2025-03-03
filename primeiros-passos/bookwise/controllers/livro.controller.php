@@ -18,9 +18,4 @@ $filtrado = array_filter($livros, fn($l) => $l['id'] == $id);
 // Obtém o livro encontrado do array filtrado
 $livro = array_pop($filtrado);
 
-
-
-$view = "livro";
-
-require_once 'views/template/app.php';
-?>
+view('livro');
