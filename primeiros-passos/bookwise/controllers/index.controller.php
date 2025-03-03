@@ -9,4 +9,6 @@
 
 require_once 'dados.php';
 
-view('index');
+view('index', [
+    'livros' => $livros
+]);
