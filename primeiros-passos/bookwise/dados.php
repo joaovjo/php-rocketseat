@@ -1,13 +1,8 @@
 <?php
 
-/**
- * Array contendo o catálogo de livros do sistema
- * Cada livro possui:
- * - id: identificador único do livro
- * - titulo: nome do livro
- * - autor: nome do autor do livro
- * - descricao: breve descrição do conteúdo do livro
- */
+$db = new PDO('sqlite:database.sqlite');
+$query = $db->query("SELECT * FROM livros");
+
 $livros = [
     ['id' => 1, 'titulo' => 'Harry Potter e a Pedra Filosofal', 'autor' => 'J.K. Rowling', 'descricao' => 'Primeiro livro da série Harry Potter.'],
     ['id' => 2, 'titulo' => 'O Código Da Vinci', 'autor' => 'Dan Brown', 'descricao' => 'Um thriller que envolve segredos religiosos.'],
