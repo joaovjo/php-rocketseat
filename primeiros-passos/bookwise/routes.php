@@ -1,17 +1,31 @@
 <?php
 
+/**
+ * Função responsável por carregar o controlador correto com base na URL atual
+ * 
+ * Analisa a URL atual e carrega o controlador apropriado.
+ * Se o controlador não for encontrado, exibe a página 404.
+ * 
+ * @return void
+ */
 function carregarController()
 {
-    $controller = str_replace('/', '', parse_url($_SERVER['REQUEST_URI'])['path']);
+    // Obtém a URI atual
+    $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-    if (!$controller) $controller = 'index';
+    // Mapeia as rotas aos controladores
+    $routes = [
+        '/' => 'controllers/index.controller.php',
+        '/livro' => 'controllers/livro.controller.php',
+    ];
 
-    if (!file_exists("controllers/{$controller}.controller.php")) {
+    // Carrega o controlador se existir, senão exibe 404
+    if (array_key_exists($uri, $routes)) {
+        require $routes[$uri];
+    } else {
         abort(404);
-        return;
     }
-
-    require_once "controllers/{$controller}.controller.php";
 }
 
+// Inicializa o roteamento
 carregarController();

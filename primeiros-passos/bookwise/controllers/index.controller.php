@@ -1,12 +1,17 @@
 <?php
 
 /**
- * Página de detalhes do livro
- * Exibe informações detalhadas de um livro específico baseado no ID recebido via GET/POST
+ * Controlador da página inicial
+ * 
+ * Responsável por carregar todos os livros do banco de dados e 
+ * renderizar a página inicial com a lista de livros.
+ * 
+ * @package BookWise
+ * @version 1.0.0
  */
 
-// Model
-
+// Obtém a lista de todos os livros do banco de dados
 $livros = (new DB)->livros();
 
+// Renderiza a view 'index' passando a lista de livros
 view('index', compact('livros'));

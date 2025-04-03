@@ -2,8 +2,12 @@
 
 /**
  * Página principal do Book Wise
- * Importa os dados do catálogo de livros e exibe a lista completa
- * com opção de pesquisa e navegação para detalhes
+ * 
+ * Este arquivo funciona como ponto de entrada da aplicação BookWise.
+ * Importa as dependências necessárias e inicializa o roteamento.
+ * 
+ * @package BookWise
+ * @version 1.0.0
  */
 
 require_once "functions.php";

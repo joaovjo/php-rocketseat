@@ -1,11 +1,33 @@
+/**
+ * Script de inicialização do banco de dados BookWise
+ * 
+ * Este script cria a estrutura completa do banco de dados para a aplicação BookWise,
+ * incluindo tabelas, relacionamentos e dados iniciais para demonstração.
+ * 
+ * @package BookWise
+ * @version 1.0.0
+ */
+-- Remove tabelas existentes para evitar conflitos durante a inicialização
 DROP TABLE IF EXISTS usuarios;
 DROP TABLE IF EXISTS livros;
+/**
+ * Tabela de usuários
+ * 
+ * Armazena os dados de usuários do sistema, incluindo credenciais de acesso.
+ * Cada usuário pode ter vários livros associados.
+ */
 CREATE TABLE usuarios (
   id integer primary key autoincrement not null,
   nome varchar(255) not null,
   email varchar(255) not null,
   senha varchar(255) not null
 );
+/**
+ * Tabela de livros
+ * 
+ * Armazena informações detalhadas sobre os livros disponíveis no sistema.
+ * Cada livro está associado a um usuário específico através da chave estrangeira usuario_id.
+ */
 CREATE TABLE livros (
   id integer primary key autoincrement not null,
   titulo varchar(255) not null,
@@ -14,11 +36,22 @@ CREATE TABLE livros (
   ano_de_lancamento integer not null,
   usuario_id integer references usuarios (id) not null
 );
+/**
+ * Dados iniciais - Usuários
+ * 
+ * Insere usuários de demonstração no sistema
+ */
 -- Inserindo usuários sem especificar o id
 INSERT INTO usuarios (nome, email, senha)
 VALUES ('João Vitor', 'joao@email.com', 'senha123'),
   ('Maria Oliveira', 'maria@email.com', 'senha456'),
   ('Pedro Santos', 'pedro@email.com', 'senha789');
+/**
+ * Dados iniciais - Livros
+ * 
+ * Insere uma coleção diversificada de livros para demonstração
+ * Cada livro está associado a um dos usuários criados anteriormente
+ */
 -- Inserindo os livros sem especificar o id
 INSERT INTO livros (
     titulo,
