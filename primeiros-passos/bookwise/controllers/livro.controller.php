@@ -6,16 +6,12 @@
  */
 
 // Model
-
-require_once 'dados.php';
-
-// Obtém o ID do livro da requisição
 $id = $_REQUEST['id'];
 
-// Filtra o array de livros para encontrar o livro específico
-$filtrado = array_filter($livros, fn($l) => $l['id'] == $id);
+$livro = (new DB)->livro($id);
 
-// Obtém o livro encontrado do array filtrado
-$livro = array_pop($filtrado);
+
+//dd($livro);
+
 
 view('livro', compact('livro'));
