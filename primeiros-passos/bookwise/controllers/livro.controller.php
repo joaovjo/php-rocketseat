@@ -10,11 +10,13 @@
  * @version 1.0.0
  */
 
-// Obtém o ID do livro da requisição
-$id = $_REQUEST['id'];
-
 // Busca o livro específico no banco de dados
-$livro = (new DB)->livro($_REQUEST['id']);
+$livro = (new DB)->query(
+    query: "SELECT * FROM livros WHERE id = :id",
+    class: Livro::class,
+    params: ['id' => $_GET['id']]
+)
+    ->fetch();
 
 // Renderiza a view 'livro' passando os dados do livro
 view('livro', compact('livro'));
