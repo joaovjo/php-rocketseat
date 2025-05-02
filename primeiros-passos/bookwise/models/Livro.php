@@ -27,39 +27,4 @@ class Livro
 
     /** @var int ID do usuário associado */
     public $usuario_id;
-
-    /**
-     * Construtor da classe Livro
-     * 
-     * @param int    $id                ID único do livro
-     * @param string $titulo            Título do livro
-     * @param string $autor             Nome do autor do livro
-     * @param int    $ano_de_lancamento Ano em que o livro foi lançado
-     * @param string $descricao         Descrição ou sinopse do livro
-     * @param int    $usuario_id        ID do usuário associado ao livro
-     * 
-     * @return void
-     */
-    public function __construct($id, $titulo, $autor, $ano_de_lancamento, $descricao)
-    {
-        $this->id = $id;
-        $this->titulo = $titulo;
-        $this->autor = $autor;
-        $this->ano_de_lancamento = $ano_de_lancamento;
-        $this->descricao = $descricao;
-        //$this->usuario_id = $usuario_id;
-    }
-
-    /**
-     * Cria uma nova instância de Livro a partir de um array associativo
-     * 
-     * @param array $item Array associativo contendo os dados do livro
-     * 
-     * @return Livro Nova instância da classe Livro
-     */
-    public static function make($item)
-    {
-        $livro = new self($item['id'], $item['titulo'], $item['autor'], $item['ano_de_lancamento'], $item['descricao']);
-        return $livro;
-    }
 }
