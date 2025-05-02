@@ -9,7 +9,6 @@
 <!-- Grid de exibição dos livros -->
 <section class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-
     <?php foreach ($livros as $livro): ?>
         <!-- Card individual de cada livro -->
         <div class="p-2 rounded-md border-stone-800 border-2 bg-stone-900">

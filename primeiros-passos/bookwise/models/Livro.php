@@ -25,13 +25,8 @@ class Livro
     /** @var string Descrição ou sinopse do livro */
     public $descricao;
 
-    // public function __construct($id, $titulo, $autor, $ano_de_lancamento, $descricao) {
-    //     $this->id = $id;
-    //     $this->titulo = $titulo;
-    //     $this->autor = $autor;
-    //     $this->ano_de_lancamento = $ano_de_lancamento;
-    //     $this->descricao = $descricao;
-    // }
+    /** @var int ID do usuário associado */
+    public $usuario_id;
 
     /**
      * Construtor da classe Livro
@@ -41,6 +36,7 @@ class Livro
      * @param string $autor             Nome do autor do livro
      * @param int    $ano_de_lancamento Ano em que o livro foi lançado
      * @param string $descricao         Descrição ou sinopse do livro
+     * @param int    $usuario_id        ID do usuário associado ao livro
      * 
      * @return void
      */
@@ -51,6 +47,7 @@ class Livro
         $this->autor = $autor;
         $this->ano_de_lancamento = $ano_de_lancamento;
         $this->descricao = $descricao;
+        //$this->usuario_id = $usuario_id;
     }
 
     /**

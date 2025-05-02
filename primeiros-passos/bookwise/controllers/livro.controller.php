@@ -14,7 +14,7 @@
 $id = $_REQUEST['id'];
 
 // Busca o livro específico no banco de dados
-$livro = (new DB)->livro($id);
+$livro = (new DB)->livro($_REQUEST['id']);
 
 // Renderiza a view 'livro' passando os dados do livro
 view('livro', compact('livro'));
