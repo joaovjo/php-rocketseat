@@ -22,7 +22,15 @@ class DB
      */
     public function __construct()
     {
-        $this->db = new PDO('sqlite:database.sqlite');
+        $config = [
+            'driver' => 'sqlite',
+            'database' => 'database.sqlite',
+            'host' => 'localhost',
+        ];
+
+        $connectionString = $config['driver'] . ':' . $config['database'];
+
+        $this->db = new PDO($connectionString);
     }
 
     /** Função que realiza consultas */
