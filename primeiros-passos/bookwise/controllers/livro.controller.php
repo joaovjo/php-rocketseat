@@ -10,8 +10,10 @@
  * @version 1.0.0
  */
 
+global $database;
+
 // Busca o livro específico no banco de dados
-$livro = (new DB)->query(
+$livro = $database->query(
     query: "SELECT * FROM livros WHERE id = :id",
     class: Livro::class,
     params: ['id' => $_GET['id']]

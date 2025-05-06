@@ -20,13 +20,8 @@ class DB
      * 
      * @return void
      */
-    public function __construct()
+    public function __construct($config)
     {
-        $config = [
-            'driver' => 'sqlite',
-            'database' => 'database.sqlite',
-            'host' => 'localhost',
-        ];
 
         $connectionString = $config['driver'] . ':' . $config['database'];
 
@@ -45,3 +40,5 @@ class DB
         return $prepare;
     }
 }
+
+$database = new DB($config['database']);

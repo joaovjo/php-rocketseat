@@ -10,11 +10,13 @@
  * @version 1.0.0
  */
 
+global $database; 
+
 // Cria uma instância da classe DB
 $pesquisar = $_REQUEST['pesquisar'] ?? '';
 
 // Obtém a lista de todos os livros do banco de dados com suporte à pesquisa
-$livros = (new DB)->query(
+$livros = $database->query(
     query: "SELECT * FROM livros WHERE titulo LIKE :filtro",
     class: Livro::class,
     params: ['filtro' => "%$pesquisar%"]
