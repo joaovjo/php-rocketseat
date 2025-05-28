@@ -26,6 +26,7 @@ class DB
         $connectionString = $config['driver'] . ':' . $config['database'];
 
         $this->db = new PDO($connectionString);
+        //$this->db = new PDO('mysql:host=localhost;port=3306;dbname=bookwise;user=root;charset=utf8mb4;');
     }
 
     /** Função que realiza consultas */
