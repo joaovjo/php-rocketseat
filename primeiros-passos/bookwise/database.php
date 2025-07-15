@@ -16,17 +16,41 @@ class DB
     /**
      * Construtor da classe DB
      * 
-     * Inicializa a conexão com o banco de dados SQLite.
+     * Inicializa a conexão com o banco de dados baseado na configuração.
      * 
+     * @param array $config Configuração do banco de dados
      * @return void
      */
     public function __construct($config)
     {
-
-        $connectionString = $config['driver'] . ':' . $config['database'];
-
-        $this->db = new PDO($connectionString);
-        //$this->db = new PDO('mysql:host=localhost;port=3306;dbname=bookwise;user=root;charset=utf8mb4;');
+        try {
+            if ($config['driver'] === 'sqlite') {
+                $connectionString = $config['driver'] . ':' . $config['database'];
+                $this->db = new PDO($connectionString);
+            } elseif ($config['driver'] === 'mysql') {
+                $connectionString = sprintf(
+                    'mysql:host=%s;port=%s;dbname=%s;charset=%s',
+                    $config['host'],
+                    $config['port'],
+                    $config['database'],
+                    $config['charset']
+                );
+                $this->db = new PDO(
+                    $connectionString,
+                    $config['username'],
+                    $config['password'],
+                    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+                );
+            } else {
+                throw new Exception("Driver de banco de dados não suportado: " . $config['driver']);
+            }
+            
+            // Configurações gerais do PDO
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+        } catch (PDOException $e) {
+            throw new Exception("Erro na conexão com o banco de dados: " . $e->getMessage());
+        }
     }
 
     /** Função que realiza consultas */
