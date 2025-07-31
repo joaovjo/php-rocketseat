@@ -1,6 +1,16 @@
 <?php
 
 /**
+ * Funções Auxiliares (Helpers)
+ * 
+ * Este arquivo contém funções globais que fornecem funcionalidades
+ * úteis em várias partes da aplicação, como renderização de views e depuração.
+ * 
+ * @package BookWise
+ * @version 1.0.0
+ */
+
+/**
  * Renderiza uma view com os dados fornecidos
  * 
  * @param string $view Nome da view a ser carregada (sem a extensão .view.php)

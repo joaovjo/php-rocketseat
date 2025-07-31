@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Página principal do Book Wise
+ * Ponto de Entrada (Front Controller)
  * 
  * Este arquivo funciona como ponto de entrada da aplicação BookWise.
- * Importa as dependências necessárias e inicializa o roteamento.
+ * É responsável por carregar as configurações, dependências e iniciar o roteador.
  * 
  * @package BookWise
  * @version 1.0.0

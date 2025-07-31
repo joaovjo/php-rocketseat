@@ -1,10 +1,17 @@
 <?php
 
 /**
- * Função responsável por carregar o controlador correto com base na URL atual
+ * Sistema de Roteamento
  * 
- * Analisa a URL atual e carrega o controlador apropriado.
- * Se o controlador não for encontrado, exibe a página 404.
+ * Define as rotas da aplicação e carrega o controlador correspondente
+ * com base na URI da requisição.
+ * 
+ * @package BookWise
+ * @version 1.0.0
+ */
+
+/**
+ * Carrega o controlador correto com base na URI da requisição.
  * 
  * @return void
  */

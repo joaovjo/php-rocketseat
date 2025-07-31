@@ -3,9 +3,10 @@
 declare(strict_types=1);
 
 /**
- * Configurações do servidor de desenvolvimento
+ * Configuração do Servidor de Desenvolvimento
  * 
- * Este arquivo contém configurações específicas para o servidor de desenvolvimento.
+ * Este arquivo é utilizado pelo servidor de desenvolvimento embutido do PHP (`php -S`).
+ * Ele pode ser usado para definir variáveis de ambiente ou tratar requisições de arquivos estáticos.
  * 
  * @package BookWise
  * @version 1.0.0

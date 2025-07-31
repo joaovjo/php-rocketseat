@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Controlador da página inicial
+ * Controlador da Página Inicial (Explorar)
  * 
- * Responsável por carregar todos os livros do banco de dados e 
+ * Responsável por buscar os livros no banco de dados (com suporte a filtro de pesquisa) e 
  * renderizar a página inicial com a lista de livros.
  * 
  * @package BookWise

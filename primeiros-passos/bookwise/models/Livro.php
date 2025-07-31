@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Classe Livro
  * 
@@ -11,20 +13,20 @@
 class Livro
 {
     /** @var int ID único do livro */
-    public $id;
+    public int $id;
 
     /** @var string Título do livro */
-    public $titulo;
+    public string $titulo;
 
     /** @var string Nome do autor do livro */
-    public $autor;
+    public string $autor;
 
     /** @var int Ano em que o livro foi lançado */
-    public $ano_de_lancamento;
+    public int $ano_de_lancamento;
 
     /** @var string Descrição ou sinopse do livro */
-    public $descricao;
+    public string $descricao;
 
     /** @var int ID do usuário associado */
-    public $usuario_id;
+    public int $usuario_id;
 }

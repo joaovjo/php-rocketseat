@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Controlador da página de detalhes do livro
+ * Controlador da Página de Detalhes do Livro
  * 
  * Responsável por buscar informações detalhadas de um livro específico
- * com base no ID recebido via GET/POST e renderizar a página de detalhes.
+ * com base no ID recebido e renderizar a página de detalhes correspondente.
  * 
  * @package BookWise
  * @version 1.0.0
